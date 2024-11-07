@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExLAI Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            color: #333;
+            transition: color 0.3s;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #007bff;
+        }
+        main {
+            padding-top: 2rem;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body x-data="{ tab: 'home' }">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">ExLAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'home' }" @click="tab = 'home'">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'pathways' }" @click="tab = 'pathways'">Program Pathways</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'structure' }" @click="tab = 'structure'">Program Structure</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'support' }" @click="tab = 'support'">Student Support</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'research' }" @click="tab = 'research'">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'community' }" @click="tab = 'community'">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'apply' }" @click="tab = 'apply'">Application Process</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'evaluation' }" @click="tab = 'evaluation'">Evaluation & Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'contact' }" @click="tab = 'contact'">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <!-- Home Section -->
+        <section x-show="tab === 'home'" style="display: none;" data-aos="fade-up">
+            <h1>Welcome to ExLAI Project</h1>
+            <p><strong>Introduction:</strong> ExLAI aims to create pathways in Trustworthy Artificial Intelligence (TAI) for community college students.</p>
+            <p><strong>Why ExLAI?</strong> The demand for AI professionals highlights the need for experiential learning in AI.</p>
+            <p><strong>Key Stats:</strong> Impacting 180 scholars over three years through partnerships with four community colleges.</p>
+        </section>
+
+        <!-- Program Pathways Section -->
+        <section x-show="tab === 'pathways'" style="display: none;" data-aos="fade-up">
+            <h2>Program Pathways</h2>
+            <p><strong>Direct Career Pathway:</strong> 8-week training program preparing students for AI careers.</p>
+            <p><strong>UC Immersion Pathway:</strong> Comprehensive AI training and co-op placements for continued education at UC.</p>
+            <p><strong>Eligibility:</strong> Overview of eligibility criteria for each pathway.</p>
+        </section>
+
+        <!-- Program Structure Section -->
+        <section x-show="tab === 'structure'" style="display: none;" data-aos="fade-up">
+            <h2>Program Structure</h2>
+            <p><strong>Weekly Themes and Goals:</strong> Breakdown of 8-week themes such as Orientation, Machine Learning, and Deep Learning.</p>
+            <p><strong>Key Activities:</strong> Workshops, hands-on exercises, networking forum, cybersecurity games, and career workshops.</p>
+        </section>
+
+        <!-- Student Support Services Section -->
+        <section x-show="tab === 'support'" style="display: none;" data-aos="fade-up">
+            <h2>Student Support Services</h2>
+            <p><strong>Mentorship and Guidance:</strong> Weekly mentorship with academic and industry mentors.</p>
+            <p><strong>Career Support:</strong> Career workshops, job application support, and connections with UC’s Career Services.</p>
+            <p><strong>ExLAI Certificate:</strong> Certification process and its value in the AI workforce.</p>
+        </section>
+
+        <!-- Research Section -->
+        <section x-show="tab === 'research'" style="display: none;" data-aos="fade-up">
+            <h2>Research and Development</h2>
+            <p><strong>TAI Research Hub:</strong> UC’s hub focuses on AI ethics, transparency, and security.</p>
+            <p><strong>Experiential Learning in Research:</strong> Weekly research activities and hands-on project involvement.</p>
+        </section>
+
+        <!-- Community Section -->
+        <section x-show="tab === 'community'" style="display: none;" data-aos="fade-up">
+            <h2>Community and Partnerships</h2>
+            <p><strong>College Partnerships:</strong> Community college and industry partners and their roles.</p>
+            <p><strong>Building Community:</strong> Outreach activities supporting underrepresented groups in STEM.</p>
+        </section>
+
+        <!-- Application Process Section -->
+        <section x-show="tab === 'apply'" style="display: none;" data-aos="fade-up">
+            <h2>Application Process</h2>
+            <p><strong>Timeline:</strong> Key dates for marketing, application, selection, and onboarding.</p>
+            <p><strong>Application Requirements:</strong> Essay, transcripts, recommendations, etc.</p>
+            <p><strong>Selection Criteria:</strong> Based on academic excellence and commitment to AI careers.</p>
+        </section>
+
+        <!-- Evaluation and Impact Section -->
+        <section x-show="tab === 'evaluation'" style="display: none;" data-aos="fade-up">
+            <h2>Evaluation and Impact</h2>
+            <p><strong>Program Evaluation:</strong> Process to track internship placements, retention, and scholar satisfaction.</p>
+            <p><strong>Diversity Goals:</strong> Focus on recruiting and supporting underrepresented groups in STEM.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section x-show="tab === 'contact'" style="display: none;" data-aos="fade-up">
+            <h2>Contact and Resources</h2>
+            <p><strong>FAQs:</strong> Common questions about eligibility, application process, and benefits.</p>
+            <p><strong>Contact Information:</strong> How to reach the program team for inquiries.</p>
+            <p><strong>Additional Resources:</strong> Links to related UC resources and industry partners.</p>
+        </section>
+    </main>
+
+    <!-- GSAP, AOS, and Alpine.js for animations and interactivity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize AOS for scroll animations
+        AOS.init({
+            duration: 800, // Animation duration in milliseconds
+            easing: 'ease-in-out', // Animation easing
+            once: true, // Only animate once
+        });
+
+        // GSAP animation on load for header and paragraphs
+        window.addEventListener('load', () => {
+            gsap.from("h1", { duration: 1, opacity: 0, y: -30 });
+            gsap.from("p", { duration: 1, opacity: 0, y: 30, stagger: 0.2 });
+        });
+    </script>
+</body>
+</html>
